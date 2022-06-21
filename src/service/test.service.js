@@ -1,12 +1,13 @@
 const User = require('../model/user.model')
 class TestService {
-  async creatTest(user_name, password) {
+  async createTest(user_name, password) {
     const res = await User.create({ user_name, password })
     return res.dataValues
   }
   async getUserInfo({ id, user_name, password, is_admim }) {
     const whereOpt = {}
-    id && Object.assign(whereOpt, { user_name })
+    id && Object.assign(whereOpt, { id })
+    user_name && Object.assign(whereOpt, { user_name })
     password && Object.assign(whereOpt, { password })
     is_admim && Object.assign(whereOpt, { is_admim })
     const res = await User.findOne({
