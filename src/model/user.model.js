@@ -1,4 +1,4 @@
-const { DataTypes, Model } = require('sequelize')
+const { DataTypes } = require('sequelize')
 
 const seq = require('../db/seq')
 
@@ -21,7 +21,13 @@ const User = seq.define('ts_user', {
     defaultValue: 0,
     comment: '是否为管理员, 0: 不是(默认); 1: 是'
   },
+  phone: {
+    type: DataTypes.CHAR(11),
+    allowNull: false,
+    comment: '手机号',
+  },
 })
+
 
 // 强制同步数据表(创建数据表)
 // User.sync({ force: true })

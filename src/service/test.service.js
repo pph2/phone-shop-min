@@ -1,4 +1,5 @@
 const User = require('../model/user.model')
+const Cart = require('../model/cart.model');
 class TestService {
   async createTest(user_name, password) {
     const res = await User.create({ user_name, password })

@@ -1,8 +1,7 @@
 const { DataTypes } = require('sequelize')
 const seq = require('../db/seq')
 
-const Goods = seq.define(
-  'ts_goods',
+const Goods = seq.define('ts_goods',
   {
     goods_name: {
       type: DataTypes.STRING,
@@ -12,7 +11,7 @@ const Goods = seq.define(
     goods_price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
-      comment: '商品名称'
+      comment: '商品价格'
     },
     goods_num: {
       type: DataTypes.INTEGER,
@@ -23,10 +22,22 @@ const Goods = seq.define(
       type: DataTypes.STRING,
       allowNull: false,
       comment: '商品图片url',
+    },
+    goods_parameter: {
+      type: DataTypes.STRING(1296),
+      allowNull: false,
+      comment: '商品参数'
+    },
+    goods_brand: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      comment: '商品品牌'
+    },
+    goods_desc: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      comment: '商品描述'
     }
-  },
-  {
-    paranoid: true,
   }
 );
 

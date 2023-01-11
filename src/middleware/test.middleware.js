@@ -9,6 +9,9 @@ const {
 const bcrypt = require('bcryptjs')
 
 const userValidator = async (ctx, next) => {
+  console.log(ctx.request.headers);
+  console.log('获取请求头部分数据测试');
+  console.log(ctx.request.headers['x-sg-scenario-version']);
   const { user_name, password } = ctx.request.body;
   console.log('userValidator测试');
   // 合法性

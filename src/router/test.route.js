@@ -5,9 +5,9 @@ const { register, login } = require('../controller/test.controller')
 const { userValidator, verifyUser, crpytPassword, verifyLogin } = require('../middleware/test.middleware')
 const { auth } = require('../middleware/auth.middleware')
 
-// router.get('/', (ctx, next) => {
-//   ctx.body = 'hello users'
-// })
+router.get('/alert', (ctx, next) => {
+  ctx.body = 'hello users'
+})
 router.post('/register', userValidator, verifyUser, crpytPassword, register)
 router.post('/login', userValidator, verifyLogin, login)
 
