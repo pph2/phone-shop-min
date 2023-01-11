@@ -20,7 +20,7 @@ const Cart = seq.define('ts_cart',
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      comment: '用户ID'
+      comment: '用户ID',
     }
   }
 )
