@@ -23,13 +23,13 @@ const User = seq.define('ts_user', {
   },
   phone: {
     type: DataTypes.CHAR(11),
-    allowNull: false,
+    allowNull: true,
     comment: '手机号',
   },
 })
 
 
 // 强制同步数据表(创建数据表)
-// User.sync({ force: true })
+// User.sync({ alter: true })
 
 module.exports = User

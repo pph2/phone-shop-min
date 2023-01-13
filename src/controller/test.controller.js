@@ -6,11 +6,11 @@ const {JWT_SECRET} = require('../config/config.default')
 class TestController {
   async register(ctx, next) {
     // 1、获取数据
-    const {user_name, password} = ctx.request.body;
+    const {user_name, password, phone} = ctx.request.body;
     console.log(user_name, password);
     // 2、操作数据库
     try {
-      const res = await createTest(user_name, password)
+      const res = await createTest(user_name, password, phone)
       // 3、返回结果
       ctx.body = {
         code: 0,
@@ -38,6 +38,7 @@ class TestController {
         message: '用户登录成功',
         result: {
           token: jwt.sign(res, JWT_SECRET, { expiresIn: '1d' }),
+          desToken: jwt.verify(jwt.sign(res, JWT_SECRET, { expiresIn: '1d' }), JWT_SECRET)
         },
       }
     } catch (error) {

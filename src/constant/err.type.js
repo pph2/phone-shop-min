@@ -1,13 +1,31 @@
 module.exports = {
   userFormateError: {
     code: '10001',
-    message: '用户名或密码为空',
+    message: '用户名、密码或手机号为空',
     result: '',
   },
   userAlreadyExited: {
     code: '10002',
     message: '用户名已存在',
     result: '',
+  },
+  phoneIsEmpty: {
+    code: '10010',
+    message: '手机号为空',
+    result: '',
+  },
+  phoneHasBeenBind: {
+    code: '10007',
+    message: '手机号已被绑定',
+    result: '',
+  },
+  passwordLength: {
+    code: '10008',
+    message: '注册密码少于8位',
+  },
+  passwordIncludeVariety: {
+    code: '10009',
+    message: '注册密码应包含字母和数字'
   },
   userRegisterError: {
     code: '10003',
@@ -84,4 +102,9 @@ module.exports = {
     message: '订单数据格式错误',
     result: '',
   },
+  goodsQueryFailed: {
+    code: '10502',
+    message: '商品查询失败',
+    result: '',
+  }
 }

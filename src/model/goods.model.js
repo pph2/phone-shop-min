@@ -20,12 +20,12 @@ const Goods = seq.define('ts_goods',
     },
     goods_img: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       comment: '商品图片url',
     },
     goods_parameter: {
       type: DataTypes.STRING(1296),
-      allowNull: false,
+      allowNull: true,
       comment: '商品参数'
     },
     goods_brand: {
@@ -41,6 +41,6 @@ const Goods = seq.define('ts_goods',
   }
 );
 
-// Goods.sync({ force: true })
+// Goods.sync({ alter: true })
 
 module.exports = Goods

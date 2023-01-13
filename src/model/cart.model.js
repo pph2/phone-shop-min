@@ -21,10 +21,10 @@ const Cart = seq.define('ts_cart',
       type: DataTypes.INTEGER,
       allowNull: false,
       comment: '用户ID',
-    }
+    },
   }
 )
-// Cart.sync({ force: true });
+// Cart.sync({alter: true});
 
 Cart.belongsTo(User, {
   foreignKey: 'user_id',
